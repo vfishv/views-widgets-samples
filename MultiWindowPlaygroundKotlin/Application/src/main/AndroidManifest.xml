@@ -28,7 +28,8 @@
          into a separate task stack. -->
         <activity
             android:name="com.android.multiwindowplayground.MainActivity"
-            android:taskAffinity="">
+            android:taskAffinity=""
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -39,6 +40,7 @@
         <activity
             android:name="com.android.multiwindowplayground.activities.UnresizableActivity"
             android:resizeableActivity="false"
+            android:exported="false"
             android:taskAffinity="" />
 
         <!-- This Activity has a default size (750x500dp) with a minimum size
@@ -47,6 +49,7 @@
         <activity
             android:name="com.android.multiwindowplayground.activities.MinimumSizeActivity"
             android:launchMode="singleInstance"
+            android:exported="false"
             android:taskAffinity="">
             <layout
                 android:defaultHeight="500dp"
@@ -60,11 +63,13 @@
           controlled via a flag set in the intent that launches this Activity. -->
         <activity
             android:name="com.android.multiwindowplayground.activities.AdjacentActivity"
+            android:exported="false"
             android:taskAffinity="" />
 
         <!-- This Activity is launched within an area defined in its launch intent. -->
         <activity
             android:name="com.android.multiwindowplayground.activities.LaunchBoundsActivity"
+            android:exported="false"
             android:taskAffinity="" />
 
         <!-- This activity handles all configuration changes itself.
@@ -73,12 +78,14 @@
             android:name="com.android.multiwindowplayground.activities.CustomConfigurationChangeActivity"
             android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"
             android:launchMode="singleInstance"
+            android:exported="false"
             android:taskAffinity="" />
 
         <!-- This Activity is launched in a new task without any special flags or settings. -->
         <activity
             android:name="com.android.multiwindowplayground.activities.BasicActivity"
             android:launchMode="singleInstance"
+            android:exported="false"
             android:taskAffinity="" />
 
     </application>
