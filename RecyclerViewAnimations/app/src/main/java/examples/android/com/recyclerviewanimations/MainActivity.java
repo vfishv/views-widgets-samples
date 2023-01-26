@@ -39,6 +39,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.collection.ArrayMap;
 import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -64,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerview);
         mRecyclerView.setLayoutManager(new MyLinearLayoutManager(this));
+        //mRecyclerView.setLayoutManager(new MyGridLayoutManager(this, 3));
         mRecyclerView.setAdapter(new RVAdapter());
 
         mCustomCB.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -173,6 +175,17 @@ public class MainActivity extends AppCompatActivity {
     private class MyLinearLayoutManager extends LinearLayoutManager {
         public MyLinearLayoutManager(Context context) {
             super(context);
+        }
+
+        @Override
+        public boolean supportsPredictiveItemAnimations() {
+            return mPredictiveCB.isChecked();
+        }
+    }
+
+    private class MyGridLayoutManager extends GridLayoutManager {
+        public MyGridLayoutManager(Context context, int spanCount) {
+            super(context, spanCount);
         }
 
         @Override
