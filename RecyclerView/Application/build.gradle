@@ -6,7 +6,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.4.0'
+        classpath 'com.android.tools.build:gradle:8.5.1'
     }
 }
 
@@ -21,7 +21,7 @@ dependencies {
 
 
         implementation 'androidx.cardview:cardview:1.0.0'
-        implementation 'androidx.appcompat:appcompat:1.6.0'
+        implementation 'androidx.appcompat:appcompat:1.6.1'
 
 
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
@@ -41,6 +41,7 @@ List<String> dirs = [
 
 android {
     compileSdkVersion 33
+    namespace "com.example.android.recyclerview"
 
     defaultConfig {
         minSdkVersion 14
