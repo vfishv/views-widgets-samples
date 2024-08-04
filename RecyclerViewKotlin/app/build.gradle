@@ -16,10 +16,11 @@
 
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
+//apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 33
+    compileSdk 34
+    namespace "com.example.recyclersample"
 
     defaultConfig {
         applicationId "com.example.recyclersample"
